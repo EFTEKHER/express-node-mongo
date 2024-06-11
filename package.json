@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "npx tailwindcss -i ./public/input.css -o ./public/output.css",
     "watch:css": "nodemon -e js,ejs,css -x \"npm run build:css\"",
-    "dev": "nodemon ./indexExpress.js"
+    "dev": "nodemon ./indexExpress.js",
+    "build":"node ./indexExpress.js"
   },
   "author": "",
   "license": "ISC",
