@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
-    <title>Document</title>
+    <title>Register</title>
 </head>
-<body>
-     <div class="bg-slate-700 text-white mt-10 mx-auto h-[600px] flex flex-col w-[500px] shadow-2xl rounded-2xl shadow-slate-950 hover:scale-105 space-y-10 p-10">
-         <h1 class="text-center text-4xl mb-10">Form Data</h1>
-         <form action="/register" class="space-y-10" method="post">
-
-            <label for="name" class="p-2 text-2xl">Name:</label>
-            <input type="text" name="name" class="h-10 w-[70%] inline-block rounded text-black" placeholder="Enter your name">
-            <label for="email" class="p-2 text-2xl">Email:</label>
-            <input type="email" name="email" class="h-10 w-[70%] rounded text-black" placeholder="Enter your email">
-            <label for="email" class="p-2 text-2xl">password:</label>
-            <input type="password" name="email" class="h-10 w-[70%] rounded text-black" placeholder="Enter your password">
-            <input class="bg-blue-700 px-10 content-center" type="submit">
-           
-         </form>
-
-     </div>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-slate-700 text-white mt-10 mx-4 md:mx-auto md:mt-20 h-auto md:h-[600px] flex flex-col w-full max-w-md shadow-2xl rounded-2xl shadow-slate-950 hover:scale-105 transition-transform duration-300 p-6 md:p-10">
+        <h1 class="text-center text-4xl mb-10">Register</h1>
+        <% if (message) { %>
+            <p class="text-center text-red-500"><%= message %></p>
+        <% } %>
+        <form action="/register" class="space-y-4 md:space-y-5" method="post">
+            <div>
+                <label for="name" class="block p-2 text-lg md:text-2xl">Name:</label>
+                <input type="text" id="name" name="name" class="h-10 w-full md:w-[70%] rounded text-black p-2" placeholder="Enter your name">
+            </div>
+            <div>
+                <label for="email" class="block p-2 text-lg md:text-2xl">Email:</label>
+                <input type="email" id="email" name="email" class="h-10 w-full md:w-[70%] rounded text-black p-2" placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="password" class="block p-2 text-lg md:text-2xl">Password:</label>
+                <input type="password" id="password" name="password" class="h-10 w-full md:w-[70%] rounded text-black p-2" placeholder="Enter your password">
+            </div>
+            <div class="text-center">
+                <input class="bg-blue-700 px-6 md:px-10 py-2 rounded hover:bg-blue-500 transition-colors duration-300" type="submit">
+            </div>
+            <p class="text-center mt-4">
+                <a href="/login" class="text-blue-500 hover:underline">Already have an account?</a>
+            </p>
+        </form>
+    </div>
 </body>
 </html>
